@@ -13,19 +13,12 @@ public class Philosopher implements Runnable {
 
 	public void run() {
 
-		boolean flag = true;
-		while (flag) {
+		
+		while (true) {
 			think();
 			monitor.takeForks(id);
 			eat();
 			monitor.returnForks(id);
-			if (monitor.FinalCheck()) {
-				System.out.println(" They are all done with eating");
-				break;
-
-			}
-			flag = false;
-
 		}
 
 	}
